@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/auth")
+//@CrossOrigin(origins ="http://localhost:3000")
 public class AuthController {
 
     @Autowired
@@ -32,6 +33,11 @@ public class AuthController {
 
     @Autowired
     private PasswordEncoder passwordEncoder;
+
+    @GetMapping("/login")
+    public ResponseEntity<String> getStatus() {
+        return ResponseEntity.ok("running");
+    }
 
     @PostMapping(value = "/login", consumes = "application/json", produces = "application/json")
     public ResponseEntity<AuthResponse> login(@RequestBody AuthRequest authRequest) {

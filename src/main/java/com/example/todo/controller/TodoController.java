@@ -16,7 +16,9 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/todo")
+//@CrossOrigin(origins ="http://localhost:3000")
 public class TodoController {
+
 
     @Autowired
     private TodoService todoService;
